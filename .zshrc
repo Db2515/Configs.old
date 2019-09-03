@@ -107,4 +107,4 @@ fi
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # ARM Specifics
-source arm_configs/path.zsh
+source $HOME/arm_configs/path.zsh
