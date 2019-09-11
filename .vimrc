@@ -24,10 +24,16 @@ set shiftwidth=4
 set expandtab
 " Change to 2 spaces for shell
 autocmd Filetype sh setlocal tabstop=2 shiftwidth=2 softtabstop=2
-"Match above indentation
+" Match above indentation
 set autoindent
 set smartindent
-
+" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 " Move up/down editor lines
 nnoremap j gj
