@@ -24,6 +24,10 @@ set shiftwidth=4
 set expandtab
 " Change to 2 spaces for shell
 autocmd Filetype sh setlocal tabstop=2 shiftwidth=2 softtabstop=2
+"Match above indentation
+set autoindent
+set smartindent
+
 
 " Move up/down editor lines
 nnoremap j gj
