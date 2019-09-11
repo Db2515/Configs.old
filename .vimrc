@@ -22,6 +22,8 @@ set formatoptions=tcqrn1
 set tabstop=4
 set shiftwidth=4
 set expandtab
+" Change to 2 spaces for shell
+autocmd Filetype sh setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Move up/down editor lines
 nnoremap j gj
