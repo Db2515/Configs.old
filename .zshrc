@@ -68,7 +68,7 @@ ZSH_THEME="frisk_oneline"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,6 +102,19 @@ source $ZSH/oh-my-zsh.sh
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
+
+# Add scripts folder to path
+PATH=$PATH:$HOME/scripts
+
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+# # Emacs style
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+
+# Allow tab completion in z
+autoload -U compinit && compinit
 
 # Config git bare repo alias
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
