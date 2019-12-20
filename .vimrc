@@ -1,3 +1,6 @@
+" Pathogen Plugin Manager
+execute pathogen#infect()
+
 " Don't try to be vi compatible
 set nocompatible
 
@@ -19,8 +22,8 @@ set encoding=utf-8
 " Whitespace
 set textwidth=100
 set formatoptions=tcqrn1
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 " Change to 2 spaces for shell
 autocmd Filetype sh setlocal tabstop=2 shiftwidth=2 softtabstop=2
@@ -48,3 +51,6 @@ set hidden
 " Map the <Space> key to toggle a selected fold opened/closed.
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
+
+" Cscope Plugin
+source ~/.vim/plugins/cscope_maps.vim
