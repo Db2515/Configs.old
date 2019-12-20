@@ -38,6 +38,8 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+" Change colour of indent line
+let g:indentLine_color_term = 239
 
 " NERD Commenter config
 " Add spaces after comment delimiters by default
