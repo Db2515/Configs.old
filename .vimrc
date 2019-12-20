@@ -51,6 +51,13 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
+" YouCompleteMe config
+" Close preview after insertion
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_filetype_specific_completion_to_disable = {
+        \ 'gitcommit': 1
+        \}
+
 " Move up/down editor lines
 nnoremap j gj
 nnoremap k gk
