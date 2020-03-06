@@ -31,7 +31,6 @@ ZSH_THEME="frisk_oneline"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
-
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS=true
 
@@ -115,6 +114,14 @@ bindkey '^x^e' edit-command-line
 
 # Allow tab completion in z
 autoload -U compinit && compinit
+
+#  Function to view md files
+unalias md
+md() { pandoc "$1" | lynx -stdin; }
+
+# Alias to ring the bell
+alias ring="echo -e '\a'"
+
 
 # Config git bare repo alias
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
